@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: aliceblue;
+    text-align: center;
+    color: black;
+    display: block;
+}    
+
+header {
+    background-color: #1F7590;
+    width: 1440px;
+    height: 75px;
+    display: flex;
+}
+
+h1 {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-content: center;
+}
+
+card {
+    width: 397px;
+    height: 844px; 
+    border: black;
+}
