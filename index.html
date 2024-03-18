@@ -1,20 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeatherDasboard</title>
-    <link rel="stylesheet" href="./assets/css /style.css">
-</head>
+    <title>MrJsWeatherDashboard</title>
+   
+    <link rel="stylesheet" href="assets/css /style.css">
+  </head>
 <body>
-   <header>
-    <h1>Weather Dashboard</h1>
-   </header> 
-   <card>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <main>
+        <div class="left-card">
+            <div id="left-content" class="search-for-a-city">Search for a city :</div>
+            <div id="left-content" class="input-box"></div>
+            <button id="left-content" class="search-btn">Search</button>
+            <div id="left-content" class="card-line"></div>
+            <button id="left-content" class="denver-btn">Denver</button>
+            <button id="left-content" class="alanta-btn">Atlanta</button>
+            <button id="left-content" class="seattle-btn">Seattle</button>
+            <button id="left-content" class="sanfransisco-btn">San Fransisco</button>
+            <button id="left-content" class="orlando-btn">Orlando</button>
+            <button id="left-content" class="newyork-btn">New York</button>
+            <button id="left-content" class="chicago-btn">Chicago</button>
+            <button id="left-content" class="austin-btn">Austin</button>
+        </div>
+        <div class="body">
+            <div class="result-box"></div>
+            <div class="_5-day-text">5-Day Forecast :</div>
+            <div class="_5-day-box"></div>
+        </div>
+    </main>    
     
-   </card>
-
-
-   <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>

@@ -4,32 +4,255 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Inter-ExtraBold", sans-serif;
     background-color: aliceblue;
     text-align: center;
     color: black;
-    display: block;
-}    
+}
 
 header {
     background-color: #1F7590;
     width: 1440px;
     height: 75px;
-    display: flex;
+    display: block;
 }
 
 h1 {
     color: #FFF;
-    font-family: Inter;
+    font-family: "Inter-ExtraBold", sans-serif;
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    align-content: center;
+    margin: auto;
 }
 
-card {
-    width: 397px;
-    height: 844px; 
-    border: black;
+main {
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.left-card {
+    background: rgba(64, 64, 64, 0.22);
+    border-radius: 2px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0);
+    border-width: 1px;
+    height: 850px;
+    width: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#left-content {
+    margin: auto;
+    padding: auto;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.search-for-a-city {
+    color: #000000;
+    text-align: center;
+    font-family: "Inter-ExtraBold", sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    position: inherit;
+    display: flex;
+}
+
+
+.input-box {
+    background: #ffffff;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 2.5px;
+    width: 297px;
+    height: 60px;
+    position: inherit;
+    display: flex;
+}
+
+
+.card-line {
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px 0 0 0;
+    width: 338px;
+    height: 0px;
+    position: inherit;
+}
+
+.search-btn {
+    background: #3e6f92;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    position: inherit;
+}
+
+.denver-btn {
+    background: #3e6f92;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    position: inherit;
+}
+
+.alanta-btn {
+    background: #3e6f92;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    position: inherit;
+}
+
+.seattle-btn {
+    background: #3e6f92;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    position: inherit;
+}
+
+.sanfransisco-btn {
+    background: #3e6f92;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    position: inherit;
+}
+
+.orlando-btn {
+    background: #3e6f92;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    position: inherit;
+}
+
+
+.newyork-btn {
+    background: #3e6f92;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    position: inherit;
+}
+
+.chicago-btn {
+    background: #3e6f92;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    position: inherit;
+}
+
+.austin-btn {
+    background: #3e6f92;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    position: inherit;
+}
+
+.body {
+  border-radius: 2px;
+  height: 844px;
+  position: relative;
+  position: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}  
+
+.result-box {
+  margin: 40px;
+  background: #fff;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 2.5px;
+  border-radius: 20px;
+  width: 700px;
+  height: 300px;
+  position: relative;
+}
+
+._5-day-text {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  position: relative;
+}
+
+._5-day-box {
+  margin: 40px;
+  background: #fff;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 2.5px;
+  border-radius: 20px;
+  width: 700px;
+  height: 300px;
+  position: relative;
+}
+
