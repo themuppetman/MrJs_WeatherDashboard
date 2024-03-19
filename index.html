@@ -1,39 +1,36 @@
-
-<!doctype html>
-<html class="no-js" lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MrJsWeatherDashboard</title>
-   
     <link rel="stylesheet" href="assets/css /style.css">
-  </head>
+</head>
 <body>
-    <header>
-        <h1>Weather Dashboard</h1>
-    </header>
     <main>
-        <div class="left-card">
-            <div id="left-content" class="search-for-a-city">Search for a city :</div>
-            <div id="left-content" class="input-box"></div>
-            <button id="left-content" class="search-btn">Search</button>
+        <header>
+            <h1>Weather Dashboard</h1>
+        </header> 
+        <form id="location-form">
+            <input type="text" id="city" placeholder="Enter City">
+            <button type="submit" id="submit">Submit</button>
             <div id="left-content" class="card-line"></div>
-            <button id="left-content" class="denver-btn">Denver</button>
-            <button id="left-content" class="alanta-btn">Atlanta</button>
-            <button id="left-content" class="seattle-btn">Seattle</button>
-            <button id="left-content" class="sanfransisco-btn">San Fransisco</button>
-            <button id="left-content" class="orlando-btn">Orlando</button>
-            <button id="left-content" class="newyork-btn">New York</button>
-            <button id="left-content" class="chicago-btn">Chicago</button>
-            <button id="left-content" class="austin-btn">Austin</button>
-        </div>
+            <button id="left-content" class="save-btn"></button>
+            <button id="left-content" class="save-btn"></button>
+            <button id="left-content" class="save-btn"></button>
+            <button id="left-content" class="save-btn"></button>
+            <button id="left-content" class="save-btn"></button>
+            <button id="left-content" class="save-btn"></button>
+            <button id="left-content" class="save-btn"></button>
+            <button id="left-content" class="save-btn"></button>
+        </form>
         <div class="body">
-            <div class="result-box"></div>
+            <div id="weather"></div>
             <div class="_5-day-text">5-Day Forecast :</div>
             <div class="_5-day-box"></div>
         </div>
-    </main>    
-    
-  </body>
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+</body>
 </html>

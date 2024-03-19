@@ -32,7 +32,7 @@ main {
     flex-wrap: wrap;
 }
 
-.left-card {
+#location-form {
     background: rgba(64, 64, 64, 0.22);
     border-radius: 2px;
     border-style: solid;
@@ -64,7 +64,7 @@ main {
 }
 
 
-.input-box {
+#city {
     background: #ffffff;
     border-radius: 20px;
     border-style: solid;
@@ -86,7 +86,15 @@ main {
     position: inherit;
 }
 
-.search-btn {
+input {
+    margin: auto;
+    font-size: 24px;
+    font-family: "Inter-Bold", sans-serif;
+    color: #000000;
+    text-align: center;
+}
+
+#submit {
     background: #3e6f92;
     color: #ffffff;
     text-align: center;
@@ -100,8 +108,8 @@ main {
     position: inherit;
 }
 
-.denver-btn {
-    background: #3e6f92;
+.save-btn {
+    background: grey;
     color: #ffffff;
     text-align: center;
     font-family: "Inter-Bold", sans-serif;
@@ -112,118 +120,10 @@ main {
     width: 300px;
     height: 60px;
     position: inherit;
+    display: none;
 }
 
-.alanta-btn {
-    background: #3e6f92;
-    color: #ffffff;
-    text-align: center;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    border-radius: 20px;
-    width: 300px;
-    height: 60px;
-    position: inherit;
-}
-
-.seattle-btn {
-    background: #3e6f92;
-    color: #ffffff;
-    text-align: center;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    border-radius: 20px;
-    width: 300px;
-    height: 60px;
-    position: inherit;
-}
-
-.sanfransisco-btn {
-    background: #3e6f92;
-    color: #ffffff;
-    text-align: center;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    border-radius: 20px;
-    width: 300px;
-    height: 60px;
-    position: inherit;
-}
-
-.orlando-btn {
-    background: #3e6f92;
-    color: #ffffff;
-    text-align: center;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    border-radius: 20px;
-    width: 300px;
-    height: 60px;
-    position: inherit;
-}
-
-
-.newyork-btn {
-    background: #3e6f92;
-    color: #ffffff;
-    text-align: center;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    border-radius: 20px;
-    width: 300px;
-    height: 60px;
-    position: inherit;
-}
-
-.chicago-btn {
-    background: #3e6f92;
-    color: #ffffff;
-    text-align: center;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    border-radius: 20px;
-    width: 300px;
-    height: 60px;
-    position: inherit;
-}
-
-.austin-btn {
-    background: #3e6f92;
-    color: #ffffff;
-    text-align: center;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    border-radius: 20px;
-    width: 300px;
-    height: 60px;
-    position: inherit;
-}
-
-.body {
-  border-radius: 2px;
-  height: 844px;
-  position: relative;
-  position: inherit;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}  
-
-.result-box {
+#weather {
   margin: 40px;
   background: #fff;
   border-style: solid;
@@ -236,6 +136,7 @@ main {
 }
 
 ._5-day-text {
+  margin: 40px;  
   color: #000000;
   text-align: left;
   font-family: "Inter-ExtraBold", sans-serif;
