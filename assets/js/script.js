@@ -1,7 +1,34 @@
 document.getElementById('location-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    const city = document.getElementById('city').value;
+    const city = document.getElementById('city').value.trim();
 
+    // Check if button for the city already exists
+    if (!document.getElementById(`save-btn-${city.toLowerCase()}`)) {
+        createCityButton(city);
+    } 
+
+    // Fetch and display weather and forecast
+    fetchWeatherAndForecast(city);
+});
+
+function createCityButton(city) {
+    const buttonContainer = document.getElementById('location-form');
+    const button = document.createElement('button');
+    button.id = `save-btn-${city.toLowerCase()}`;
+    button.classList.add('save-btn');
+    // Save city to local storage
+    const savedCities = JSON.parse(localStorage.getItem('savedCities')) || {};
+    savedCities[city] = city;
+    button.textContent = city;
+    button.addEventListener('click', function () {
+        fetchWeatherAndForecast(savedCities[city]);
+    });
+    buttonContainer.appendChild(button);
+    // Do not add button if city is empty
+    
+}
+
+function fetchWeatherAndForecast(city) {
     // Fetch weather data
     getWeather(city)
         .then(data => {
@@ -22,16 +49,11 @@ document.getElementById('location-form').addEventListener('submit', function (e)
             console.error('Error fetching forecast:', error);
             displayError('Could not fetch forecast. Please try again.');
         });
-
-   
-
-});
-
-
+}
 
 function getWeather(city) {
     const apiKey = '9124784d854a241918add64bd859e008';
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
     return fetch(apiUrl)
         .then(response => {
@@ -44,7 +66,7 @@ function getWeather(city) {
 
 function getForecast(city) {
     const apiKey = '9124784d854a241918add64bd859e008';
-    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
 
     return fetch(apiUrl)
         .then(response => {
@@ -63,6 +85,8 @@ function displayWeather(data) {
         <img src="${iconUrl}" alt="${data.weather[0].description}">
         <p>Temperature: ${data.main.temp}°F</p>
         <p>Weather: ${data.weather[0].main}</p>
+        <p>Humidity: ${data.main.humidity}%</p>
+        <p>Wind: ${data.wind.speed} mph</p>
     `;
 }
 
@@ -82,7 +106,9 @@ function displayForecast(data) {
         forecastItem.innerHTML = `
             <h3>${date}</h3>
             <img src="${iconUrl}" alt="${item.weather[0].description}">
-            <p>Temp: ${temp}°C</p>
+            <p>Temp: ${temp}°F</p>
+            <p>Humidity: ${item.main.humidity}%</p>
+            <p>Wind: ${item.wind.speed} mph</p>
             <p>${item.weather[0].main}</p>
         `;
         forecastDiv.appendChild(forecastItem);
@@ -93,10 +119,9 @@ function displayForecast(data) {
 function saveWeatherData(data) {
     localStorage.setItem('weatherData', JSON.stringify(data));
 }
-// Display saved cities in location-form
-
 
 function displayError(message) {
     const weatherDiv = document.getElementById('weather');
     weatherDiv.innerHTML = `<p class="error">${message}</p>`;
 }
+
