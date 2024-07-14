@@ -1,4 +1,4 @@
-document.getElementById('location-form').addEventListener('submit', function(e) {
+document.getElementById('location-form').addEventListener('submit', function (e) {
     e.preventDefault();
     const city = document.getElementById('city').value;
 
@@ -22,39 +22,9 @@ document.getElementById('location-form').addEventListener('submit', function(e) 
             console.error('Error fetching forecast:', error);
             displayError('Could not fetch forecast. Please try again.');
         });
-    
-        function saveCity(city) {
-            let cities = JSON.parse(localStorage.getItem('savedCities')) || [];
-    
-            // Ensure city is not already saved
-            if (!cities.includes(city)) {
-                cities.push(city);
-                localStorage.setItem('savedCities', JSON.stringify(cities));
-            }
-        }
-    
-        // Function to display saved cities as buttons
-        function displaySavedCities() {
-            const savedCitiesContainer = document.getElementById('saved-cities');
-            const cities = JSON.parse(localStorage.getItem('savedCities')) || [];
-            savedCitiesContainer.innerHTML = ''; // Clear previous buttons
 
-            cities.forEach((city, index) => {
-                const button = document.createElement('button');
-                button.textContent = city;
-                button.classList.add('save-btn');
-                button.addEventListener('click', function() {
-                    getWeather(city); // Fetch weather when button is clicked
-                });
-                savedCitiesContainer.appendChild(button);
-            });
-        }
-    
-        // Initial display of saved cities on page load
-        displaySavedCities();
-        saveCity();
-    
-    
+   
+
 });
 
 
@@ -91,7 +61,7 @@ function displayWeather(data) {
     weatherDiv.innerHTML = `
         <h2>${data.name}</h2>
         <img src="${iconUrl}" alt="${data.weather[0].description}">
-        <p>Temperature: ${data.main.temp}°C</p>
+        <p>Temperature: ${data.main.temp}°F</p>
         <p>Weather: ${data.weather[0].main}</p>
     `;
 }
@@ -119,9 +89,12 @@ function displayForecast(data) {
     });
 }
 
+// Save weather data to local storage
 function saveWeatherData(data) {
     localStorage.setItem('weatherData', JSON.stringify(data));
 }
+// Display saved cities in location-form
+
 
 function displayError(message) {
     const weatherDiv = document.getElementById('weather');
