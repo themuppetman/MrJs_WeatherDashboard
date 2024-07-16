@@ -11,12 +11,13 @@
         <header>
             <h1>Weather Dashboard</h1>
         </header>
-        <form id="location-form">
-            <input type="text" id="city" placeholder="Enter City">
-            <button type="submit" id="submit">Submit</button>
-            <div id="saved-cities" class="saved-cities"></div>
-           <!-- Saved cities buttons will be added here -->
-        </form>
+        <div class="search">
+            <form id="location-form">
+                <input type="text" id="city" placeholder="Enter City">
+                <button type="submit" id="submit">Submit</button>
+            </form>
+            <div class="saved-cities"></div>
+        </div>
         <div class="body">
             <div id="weather"></div>
             <div class="_5-day-text">5-Day Forecast :</div>

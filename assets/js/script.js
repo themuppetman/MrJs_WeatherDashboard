@@ -1,31 +1,40 @@
+document.addEventListener('DOMContentLoaded', loadSavedCities); // Load saved cities when the DOM is fully loaded
+
 document.getElementById('location-form').addEventListener('submit', function (e) {
     e.preventDefault();
     const city = document.getElementById('city').value.trim();
 
     // Check if button for the city already exists
-    if (!document.getElementById(`save-btn-${city.toLowerCase()}`)) {
+    if (city && !document.getElementById(`save-btn-${city.toLowerCase()}`)) {
         createCityButton(city);
-    } 
+    }
 
     // Fetch and display weather and forecast
     fetchWeatherAndForecast(city);
 });
 
 function createCityButton(city) {
-    const buttonContainer = document.getElementById('location-form');
+    const buttonContainer = document.querySelector('.saved-cities'); // Correct the container
     const button = document.createElement('button');
     button.id = `save-btn-${city.toLowerCase()}`;
     button.classList.add('save-btn');
-    // Save city to local storage
-    const savedCities = JSON.parse(localStorage.getItem('savedCities')) || {};
-    savedCities[city] = city;
     button.textContent = city;
     button.addEventListener('click', function () {
-        fetchWeatherAndForecast(savedCities[city]);
+        fetchWeatherAndForecast(city);
     });
     buttonContainer.appendChild(button);
-    // Do not add button if city is empty
-    
+
+    // Save city to local storage
+    const savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
+    if (!savedCities.includes(city)) {
+        savedCities.push(city);
+        localStorage.setItem('savedCities', JSON.stringify(savedCities));
+    }
+}
+
+function loadSavedCities() {
+    const savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
+    savedCities.forEach(city => createCityButton(city));
 }
 
 function fetchWeatherAndForecast(city) {
@@ -124,4 +133,3 @@ function displayError(message) {
     const weatherDiv = document.getElementById('weather');
     weatherDiv.innerHTML = `<p class="error">${message}</p>`;
 }
-
